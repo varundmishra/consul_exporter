@@ -55,7 +55,7 @@ var (
 	serviceTag = prometheus.NewDesc(
 		prometheus.BuildFQName(namespace, "", "service_tag"),
 		"Tags of a service.",
-		[]string{"service_id", "node", "status" "tag"}, nil,
+		[]string{"service_id", "node", "status", "tag"}, nil,
 	)
 	serviceNodesHealthy = prometheus.NewDesc(
 		prometheus.BuildFQName(namespace, "", "catalog_service_node_healthy"),
