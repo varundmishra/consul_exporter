@@ -310,7 +310,7 @@ func (e *Exporter) collectOneHealthSummary(ch chan<- prometheus.Metric, serviceN
 			serviceNodesHealthy, prometheus.GaugeValue, passing, entry.Service.ID, entry.Node.Node, entry.Service.Service,
 		)
 		for _, tag := range entry.Service.Tags {
-			ch <- prometheus.MustNewConstMetric(serviceTag, prometheus.GaugeValue, 1, entry.Service.ID, entry.Node.Node, status, tag)
+			ch <- prometheus.MustNewConstMetric(serviceTag, prometheus.GaugeValue, 1, entry.Service.ID, entry.Node.Node, hc.Status, tag)
 		}
 	}
 	return nil
